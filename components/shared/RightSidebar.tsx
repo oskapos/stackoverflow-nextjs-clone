@@ -12,11 +12,11 @@ const questions = [
 ];
 
 const popTags = [
-  { _id: 1, name: 'JS', totalQs: 5 },
-  { _id: 2, name: 'React', totalQs: 5 },
-  { _id: 3, name: 'Next', totalQs: 5 },
-  { _id: 4, name: 'Node', totalQs: 5 },
-  { _id: 5, name: 'Rust', totalQs: 5 },
+  { _id: '1', name: 'JS', totalQs: 5 },
+  { _id: '2', name: 'React', totalQs: 5 },
+  { _id: '3', name: 'Next', totalQs: 5 },
+  { _id: '4', name: 'Node', totalQs: 5 },
+  { _id: '5', name: 'Rust', totalQs: 5 },
 ];
 
 const RightSidebar = () => {
