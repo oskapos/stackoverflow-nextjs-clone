@@ -30,8 +30,6 @@ const Question = () => {
 
   async function onSubmit(values: z.infer<typeof QuestionsSchema>) {
     setIsSubmitting(true);
-    console.log('SUBMIT');
-    console.log(values);
     try {
       await createQuestion({});
     } catch (error) {
