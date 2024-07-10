@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { HomePageFilters } from '@/constants/filters';
 import Link from 'next/link';
 import NoResult from '@/components/shared/NoResult';
-import QuestionCard from '@/components/shared/cards/QuestionCard';
+import QuestionCard from '@/components/cards/QuestionCard';
 
 const questions = [
   {
