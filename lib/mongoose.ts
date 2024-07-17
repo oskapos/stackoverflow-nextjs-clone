@@ -18,5 +18,6 @@ export const connectToDatabase = async () => {
     console.log('MongoDB connection is ready');
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };

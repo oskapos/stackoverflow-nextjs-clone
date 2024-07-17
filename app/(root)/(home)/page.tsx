@@ -7,61 +7,11 @@ import { HomePageFilters } from '@/constants/filters';
 import Link from 'next/link';
 import NoResult from '@/components/shared/NoResult';
 import QuestionCard from '@/components/cards/QuestionCard';
+import { getQuestions } from '@/lib/actions/question.action';
 
-const questions = [
-  {
-    _id: '12345',
-    title: 'How does TypeScript improve JavaScript development?',
-    tags: [
-      {
-        _id: 't1',
-        name: 'TypeScript',
-      },
-      {
-        _id: 't2',
-        name: 'JavaScript',
-      },
-      {
-        _id: 't3',
-        name: 'Development',
-      },
-    ],
-    author: {
-      _id: 'a1',
-      name: 'Jane Doe',
-      picture: 'https://example.com/picture.jpg',
-    },
-    upvotes: 42700,
-    views: 256000000,
-    answers: [
-      {
-        _id: 'ans1',
-        author: {
-          _id: 'a2',
-          name: 'John Smith',
-          picture: 'https://example.com/picture2.jpg',
-        },
-        content: 'TypeScript adds static types to JavaScript, which helps catch errors early and improve code quality.',
-        upvotes: 30,
-        createdAt: new Date('2024-06-01T12:00:00Z'),
-      },
-      {
-        _id: 'ans2',
-        author: {
-          _id: 'a3',
-          name: 'Alice Johnson',
-          picture: 'https://example.com/picture3.jpg',
-        },
-        content: 'It also offers modern features like interfaces, generics, and type inference, making the code more robust and maintainable.',
-        upvotes: 15,
-        createdAt: new Date('2024-06-02T08:30:00Z'),
-      },
-    ],
-    createdAt: new Date('2023-05-28T10:00:00Z'),
-  },
-];
+const Home = async () => {
+  const result = await getQuestions({});
 
-const Home = () => {
   return (
     <>
       <div className='flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center'>
@@ -77,8 +27,8 @@ const Home = () => {
       <HomeFilters />
 
       <div className='mt-10 flex w-full flex-col gap-6'>
-        {questions.length > 0 ? (
-          questions.map((question) => (
+        {result.questions.length > 0 ? (
+          result.questions.map((question) => (
             <QuestionCard
               key={question._id}
               _id={question._id}
