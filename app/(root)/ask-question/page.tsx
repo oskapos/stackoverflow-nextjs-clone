@@ -5,13 +5,11 @@ import { redirect } from 'next/navigation';
 import React from 'react';
 
 const AskQuestion = async () => {
-  // const { userId } = auth();
-  const userId = '12345ABC';
+  const { userId } = auth();
 
   if (!userId) redirect('/sign-in');
 
   const mongoUser = await getUserById({ userId });
-  console.log(mongoUser);
 
   return (
     <div>
